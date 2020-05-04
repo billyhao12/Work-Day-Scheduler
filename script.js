@@ -27,3 +27,39 @@ saveBtn.on('click', function (event) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
 });
+
+// Identifies the current hour
+var currentHour = moment().hour();
+
+// Highlights the current hour block light red
+var currentHourBlock = $('#task-' + currentHour);
+currentHourBlock.css('background-color', 'lightRed');
+
+// Highlights future hour blocks light green
+for (var i = 1; i < 9; i++) {
+    $('#task-' + currentHour + i).css('background-color', 'lightGreen');
+}
+
+// ALTERNATE INCOMPLETE SOLUTION COMMENTED BELOW:
+
+// // Selects all text areas to possibly be highlighted
+// var hourBlock = $('.description')
+
+// // Current hour variable
+// var currentHour = moment().hour();
+
+// // Highlights hour blocks depending on the current hour
+// hourBlock.each(function() {
+//     var hourDisplay = parseInt( $(this).data('hour') );
+
+//     if ( hourDisplay < currentHour ) {
+//         hourBlock.css('background-color', 'lightGrey');
+    
+//     } else if ( hourDisplay === currentHour ) {
+//         hourBlock.css('background-color', 'lightRed');
+    
+//     } else {
+//         hourBlock.css('background-color', 'lightGreen');
+//     }
+
+// });
