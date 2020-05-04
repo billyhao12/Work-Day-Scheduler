@@ -31,13 +31,13 @@ saveBtn.on('click', function (event) {
 // Identifies the current hour
 var currentHour = moment().hour();
 
-// Highlights the current hour block light red
+// Highlights the current hour block crimson
 var currentHourBlock = $('#task-' + currentHour);
-currentHourBlock.css('background-color', 'lightRed');
+currentHourBlock.css('background-color', 'crimson');
 
-// Highlights future hour blocks light green
+// Highlights future hour blocks green
 for (var i = 1; i < 9; i++) {
-    $('#task-' + currentHour + i).css('background-color', 'lightGreen');
+    $('#task-' + (currentHour + i) ).css('background-color', 'springGreen');
 }
 
 // ALTERNATE INCOMPLETE SOLUTION COMMENTED BELOW:
